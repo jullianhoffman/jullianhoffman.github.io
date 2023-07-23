@@ -170,16 +170,31 @@ span{
     animation: floatImage 4s ease-in-out infinite;
 }
 
+.Habilidades{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
 .Habilidades-conteiner h1{
     font-size: 5.6rem;
     font-family: Botera-RegularStencil;
     line-height: 1.3;
 }
 .Habilidades-conteiner p{
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-family: Montserrat-Medium;
 }
 
+.Habilidades-conteiner a{
+    margin: 2.5rem;
+}
+
+.Habilidades-img img{
+    width: 35vw;
+    animation: floatImage 4s ease-in-out infinite;
+}
 
 .Social-Media a{
     display: inline-flex;
