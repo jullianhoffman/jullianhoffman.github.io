@@ -540,6 +540,7 @@ span{
     }
 
     .home-conteiner h1{
+        padding-top: 1rem;
         font-size: 5rem;
     }
 
@@ -548,12 +549,63 @@ span{
         margin-top: 4rem;
     }
 
+    .QuienSoy{
+        flex-direction: column;
+        padding: 3rem 3% 3rem 3%;
+    }
+
+    .QuienSoy-img img{
+        width: 80vw;
+        margin-top: 4rem;
+    }
+    .QuienSoy-conteiner h1{
+        padding-top: 1rem;
+        font-size: 5rem;
+    }
+    .QuienSoy-conteiner h2{
+        font-size: 2.6rem;
+    }
+    .QuienSoy-conteiner p{
+        font-size: 1.8rem;
+    }
+    .Experiencia{
+        flex-direction: column-reverse;
+    }
+    .Experiencia-img img{
+        width: 80vw;
+        margin-top: 4rem;
+    }
+    .Experiencia-conteiner h1{
+        padding-top: 1rem;
+        font-size: 5rem;
+    }
+    .Experiencia-conteiner p{
+        font-size: 1.8rem;
+    }
+    .Habilidades{
+        flex-direction: column;
+        padding: 3rem 3% 3rem 3%;
+    }
+    .Habilidades-img img{
+        width: 80vw;
+        margin-top: 4rem;
+    }
+    .Habilidades-conteiner h1{
+        padding-top: 1rem;
+        font-size: 5rem;
+    }
+    .Habilidades-conteiner p{
+        font-size: 1.8rem;
+    }
+    .Habilidades-conteiner a{
+        margin: 1.2rem;
+    }
     .Informacion{
         flex-direction: column-reverse;
     }
 
     .Informacion img{
-        width: 70vw;
+        width: 80vw;
         margin-top: 4rem;
     }
 
@@ -617,5 +669,16 @@ span{
         width: 90vw;
     }
 
+    .QuienSoy-img{
+        width: 90vw;
+    }
+
+    .Experiencia-img{
+        width: 90vw;
+    }
+
+    .Habilidades-img{
+        width: 90vw;
+    }
 
 }

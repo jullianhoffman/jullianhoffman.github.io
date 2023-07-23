@@ -44,7 +44,7 @@ ScrollReveal({
     delay:200
 });
 
-ScrollReveal().reveal('.home-conteiner, .heding', { origin: "top" });
-ScrollReveal().reveal('.Home-img, .service-conteiner, .porfolio-box, .Contacto form', { origin: "bottom"}) 
-ScrollReveal().reveal('.home-conteiner h1, .about-img', { origin: "left"})
-ScrollReveal().reveal('.home-conteiner p, .about-conteiner', { origin: "right"})
+ScrollReveal().reveal('.home-conteiner, .heding, .Experiencia-conteiner', { origin: "top" });
+ScrollReveal().reveal('.Home-img, .service-conteiner, .porfolio-box, .Contacto form, .Experiencia-img, .Habilidades-conteiner a', { origin: "bottom"}) 
+ScrollReveal().reveal('.home-conteiner h1, .about-img, .QuienSoy-img, .Habilidades-conteiner', { origin: "left"})
+ScrollReveal().reveal('.home-conteiner p, .about-conteiner, .QuienSoy-conteiner, .Habilidades-img', { origin: "right"})
