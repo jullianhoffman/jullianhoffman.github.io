@@ -465,16 +465,6 @@ span{
     html {
         font-size: 55%;
     }
-    .portafolio-conteiner .porfolio-box{
-        height: 40vh;
-        width: 40vh;
-        margin: auto;
-    }
-
-    .porfolio-box .portafolio-layer{
-        background: linear-gradient(rgb(0,0,0,.4), var(--main-color-opacity));
-        transform: translateY(0%)}
-
 }
 @media(min-width: 1200px){
     .service-conteiner .service-box{
