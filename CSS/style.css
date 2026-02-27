@@ -153,7 +153,7 @@ nav a:hover, nav a.active {
 .dropdown-menu a {
     display: block;
     padding: 10px 15px;
-    font-size: calc(14px + 0.2vw);
+    font-size: calc(16px + 0.2vw);
     border-bottom: 1px solid rgba(157, 0, 0, 0.1);
 }
 
@@ -164,6 +164,7 @@ nav a:hover, nav a.active {
 .menu-icon {
     display: none;
     cursor: pointer;
+    font-size: 35px;
 }
 
 /* Menú móvil */
