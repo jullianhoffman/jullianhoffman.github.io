@@ -1017,6 +1017,15 @@ footer {
     .carousel-button.next {
         margin-right: 10px;
     }
+    /* ... otros estilos ... */
+    
+    .contact-option i {
+        font-size: 3.5vw; /* Un poco más grande para tablets que el 2vw original */
+    }
+    
+    .contact-option {
+        font-size: 20px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1120,5 +1129,29 @@ footer {
     }
     .swiper-button-prev {
         left: 5px !important;
+    }
+    /* ... otros estilos ... */
+
+    .contact-options {
+        gap: 20px; /* Más espacio entre botones */
+        padding: 0 10px;
+    }
+
+    .contact-option {
+        padding: 20px 25px; /* Botones más altos para el dedo */
+        width: 100%;
+        max-width: 100%;
+        border-radius: 15px; /* Bordes un poco menos redondeados para que se vean más sólidos */
+    }
+
+    .contact-option i {
+        font-size: 28px !important; /* Tamaño fijo para que no desaparezca */
+        margin-right: 15px;
+    }
+
+    .contact-option span, 
+    .contact-option {
+        font-size: 18px !important; /* Texto más legible */
+        font-weight: bold;
     }
 }
