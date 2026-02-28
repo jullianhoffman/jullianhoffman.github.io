@@ -1049,4 +1049,39 @@ footer {
     .contact-option {
         max-width: 100%;
     }
+    /* Ajustes para las flechas del portafolio en móvil */
+    .swiper-button-next, 
+    .swiper-button-prev {
+        width: 50px !important; 
+        height: 50px !important;
+        
+        /* Fondo: Rojo de tu marca con 70% de opacidad */
+        background-color: rgba(157, 0, 0, 0.7) !important; 
+        
+        /* Color de la flecha interna: Blanco puro */
+        color: #ffffff !important; 
+        
+        /* IMPORTANTE: Quitamos el filtro que causaba el error */
+        filter: none !important;
+        
+        border-radius: 50%;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Esto ajusta el tamaño de la flecha de Swiper específicamente */
+    .swiper-button-next::after, 
+    .swiper-button-prev::after {
+        font-size: 18px !important; /* Flecha un poco más pequeña que el círculo */
+        font-weight: bold;
+    }
+
+    /* Posicionamiento para que no se salgan de la pantalla */
+    .swiper-button-next {
+        right: 5px !important;
+    }
+    .swiper-button-prev {
+        left: 5px !important;
+    }
 }
