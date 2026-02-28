@@ -392,7 +392,7 @@ section {
 
 /* Información */
 .informacion {
-    background-color: var(--gris);
+    background-color: var(--crema);
     padding: 80px 0;
 }
 
@@ -426,7 +426,7 @@ section {
     font-family: 'Rubik-SemiBold', sans-serif;
     font-size: calc(14px + 0.3vw);
     margin-bottom: 20px;
-    color: var(--crema);
+    color: var(--negro);
     line-height: 1.6;
 }
 
@@ -566,12 +566,12 @@ section {
 
 /* Contacto */
 .contacto {
-    background-color: var(--gris);
+    background-color: var(--crema);
 }
 
 .contacto h2 {
     font-family: 'Emberly-Medium', serif;
-    font-size: calc(50px + 1.2vw);
+    font-size: calc(70px + 1.2vw);
     color: var(--rojo);
     margin-bottom: 50px;
     text-align: center;
@@ -593,8 +593,8 @@ section {
     align-items: center;
     gap: 10px;
     padding: 15px 30px;
-    background-color: var(--crema);
-    color: var(--negro);
+    background-color: var(--gris);
+    color: var(--crema);
     border-radius: 30px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -631,12 +631,12 @@ section {
 .form-group textarea {
     width: 100%;
     padding: 15px;
-    background-color: var(--crema);
+    background-color: var(--gris);
     border: none;
     border-radius: 5px;
     font-family: 'Montserrat-SemiBold', sans-serif;
     color: var(--rojo);
-    font-size: calc(14px + 0.2vw);
+    font-size: calc(18px + 0.2vw);
 }
 
 .form-group textarea {
