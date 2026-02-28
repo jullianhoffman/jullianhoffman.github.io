@@ -636,7 +636,7 @@ section {
     border-radius: 5px;
     font-family: 'Montserrat-SemiBold', sans-serif;
     color: var(--rojo);
-    font-size: calc(18px + 0.2vw);
+    font-size: calc(14px + 0.2vw);
 }
 
 .form-group textarea {
@@ -707,6 +707,7 @@ footer {
     max-width: 90vw;
     margin-left: auto;
     margin-right: auto;
+    background-color: var(--crema); /* El fondo crema que querías */ 
 }
 
 @media (min-width: 1920px) {
@@ -726,24 +727,28 @@ footer {
 }
 
 .video-info {
+    background-color: var(--crema) !important;
+    color: var(--negro) !important;
+    border: 2px solid var(--rojo); /* El marco rojo */
     flex: 1;
     min-width: 300px;
     max-width: 500px;
     padding: 0 20px;
+    border-radius: 15px; /* <--- AÑADE ESTA LÍNEA */
 }
 
 .video-info h3 {
     font-family: 'Emberly-Medium', serif;
-    font-size: calc(24px + 0.5vw);
+    font-size: calc(34px + 0.5vw);
     color: var(--rojo);
     margin-bottom: 20px;
 }
 
 .video-info p {
     font-family: 'Rubik-Medium', sans-serif;
-    font-size: calc(14px + 0.3vw);
+    font-size: calc(18px + 0.3vw);
     margin-bottom: 20px;
-    color: var(--crema);
+    color: var(--negro);
 }
 
 .video-info ul {
@@ -753,9 +758,9 @@ footer {
 
 .video-info ul li {
     font-family: 'Rubik-Medium', sans-serif;
-    font-size: calc(14px + 0.2vw);
+    font-size: calc(18px + 0.2vw);
     margin-bottom: 10px;
-    color: var(--crema);
+    color: var(--negro);
 }
 
 /* Estilos para el carrusel Swiper */
@@ -784,7 +789,7 @@ footer {
 }
 
 .video-card {
-    background-color: var(--crema);
+    background-color: var(--negro);
     border-radius: 1.2vw;
     overflow: hidden;
     height: 100%;
@@ -1154,4 +1159,9 @@ footer {
         font-size: 18px !important; /* Texto más legible */
         font-weight: bold;
     }
+}
+
+.DemoReal {
+    background-color: var(--crema); /* O el color que prefieras, por ejemplo #0a0a0a */
+    padding-top: 100px; /* Un poco de espacio extra arriba por el header fijo */
 }
