@@ -497,12 +497,6 @@ section {
     line-height: 1.6;
 }
 
-.Education-content p.destacado {
-    font-family: 'Rubik-SemiBold', sans-serif;
-    font-size: calc(16px + 0.4vw);
-    margin-bottom: 25px;
-}
-
 .Education-content p span {
     color: var(--rojo);
     font-family: 'Rubik-SemiBold', sans-serif;
