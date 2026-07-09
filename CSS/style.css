@@ -34,7 +34,7 @@
     --crema: #f5f5dc; 
     --rojo: #9d0000;
     --negro: #00000b;
-    --gris: #333333;
+    --gris: #808384;
 }
 
 html {
@@ -424,7 +424,7 @@ section {
 
 .informacion-content p {
     font-family: 'Rubik-SemiBold', sans-serif;
-    font-size: calc(14px + 0.3vw);
+    font-size: calc(16px + 0.3vw);
     margin-bottom: 20px;
     color: var(--negro);
     line-height: 1.6;
@@ -455,6 +455,80 @@ section {
     animation: float 4s ease-in-out infinite;
     /*Sbox-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);*/
 }
+
+/* Información 2 */
+.Education {
+    background-color: var(--gris);
+    padding: 80px 0;
+}
+
+.Education-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.Education h2 {
+    font-family: 'Emberly-Medium', serif;
+    font-size: calc(50px + 1.2vw);
+    color: var(--rojo);
+    margin-bottom: 40px;
+    text-align: center;
+    text-shadow:1.5px 1.5px var(--negro) ;
+}
+
+.Education-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.Education-content {
+    flex: 1;
+    text-align: center;
+}
+
+.Education-content p {
+    font-family: 'Rubik-SemiBold', sans-serif;
+    font-size: calc(14px + 0.3vw);
+    margin-bottom: 20px;
+    color: var(--negro);
+    line-height: 1.6;
+}
+
+.Education-content p.destacado {
+    font-family: 'Rubik-SemiBold', sans-serif;
+    font-size: calc(16px + 0.4vw);
+    margin-bottom: 25px;
+}
+
+.Education-content p span {
+    color: var(--rojo);
+    font-family: 'Rubik-SemiBold', sans-serif;
+    text-shadow:1.5px 1.5px var(--negro) ;
+}
+
+.Education-container p {
+    color: var(--crema);
+    font-size: calc(18px + 0.4vw);
+    text-shadow:2px 2px var(--negro) ;    
+}
+.informacion-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.informacion-image img {
+    width: 400px;
+    height: auto;
+    max-width: 100%;
+    /*border: 5px solid var(--rojo);*/
+    animation: float 4s ease-in-out infinite;
+    /*Sbox-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);*/
+}
+
 
 .social-links {
     display: flex;
