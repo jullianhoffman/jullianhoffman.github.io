@@ -316,10 +316,10 @@ section {
     width: 250px;
     height: 250px;
     border-radius: 50%;
-    border: 5px solid var(--rojo);
+    border: 2px solid var(--rojo);
     object-fit: cover;
     animation: float 4s ease-in-out infinite;
-    box-shadow: 0 10px 25px rgba(157, 0, 0, 0.3);
+    box-shadow: 0 12px 25px rgba(157, 0, 0, 0.3);
 }
 
 @keyframes float {
