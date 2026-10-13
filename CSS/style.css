@@ -1,10 +1,7 @@
+/* Importación de tipografías: Emberly para títulos y Rubik para contenido */
 @font-face {
     font-family: 'Emberly-Medium';
     src: url('../Assest/Fonts/Emberly/TTF/Emberly-Medium.ttf') format('truetype');
-}
-@font-face {
-    font-family: 'Montserrat-SemiBold';
-    src: url('../Assest/Fonts/Montserrat/static/Montserrat-SemiBold.ttf') format('truetype');
 }
 @font-face {
     font-family: 'Rubik-Medium';
@@ -30,6 +27,7 @@
     text-decoration: none;
     font-family: 'Rubik-Medium', sans-serif;
 }
+
 :root {
     --crema: #f5f5dc; 
     --rojo: #9d0000;
@@ -48,7 +46,28 @@ body {
     line-height: 1.5;
 }
 
-/* Header */
+/* =========================================
+   SISTEMA DE VISTAS DINÁMICAS (SPA)
+   ========================================= */
+
+.page-section {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+    padding: 100px 5% 50px 5%;
+    min-height: 100vh;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-section.active {
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+}
+
+/* Header y Navegación */
 header {
     position: fixed;
     top: 0;
@@ -76,18 +95,6 @@ header .logo img {
     display: block;
 }
 
-@media (min-width: 1200px) {
-    header .logo img {
-        height: 85px;
-    }
-}
-
-@media (min-width: 1600px) {
-    header .logo img {
-        height: 95px;
-    }
-}
-
 nav {
     display: flex;
     gap: 30px;
@@ -99,76 +106,21 @@ nav a {
     font-family: 'Rubik-Medium', sans-serif;
     font-size: calc(18px + 0.2vw);
     transition: color 0.3s ease;
+    cursor: pointer;
 }
 
 nav a:hover, nav a.active {
     color: var(--rojo);
 }
 
-/* Estilos para el menú desplegable */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-toggle {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    cursor: pointer;
-}
-
-.dropdown-toggle i {
-    font-size: 14px;
-    transition: transform 0.3s ease;
-}
-
-.dropdown:hover .dropdown-toggle i {
-    transform: rotate(180deg);
-}
-
-.dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: var(--negro);
-    min-width: 220px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-    border: 1px solid var(--rojo);
-    border-radius: 5px;
-    padding: 10px 0;
-    z-index: 1001;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
-    transition: all 0.3s ease;
-}
-
-.dropdown:hover .dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-.dropdown-menu a {
-    display: block;
-    padding: 10px 15px;
-    font-size: calc(16px + 0.2vw);
-    border-bottom: 1px solid rgba(157, 0, 0, 0.1);
-}
-
-.dropdown-menu a:last-child {
-    border-bottom: none;
-}
-
 .menu-icon {
     display: none;
     cursor: pointer;
     font-size: 35px;
+    color: var(--crema);
 }
 
 /* Menú móvil */
-
 .mobile-nav {
     display: none;
     flex-direction: column;
@@ -185,7 +137,6 @@ nav a:hover, nav a.active {
 
 .mobile-nav.active {
     display: flex;
-    animation: slideDown 0.3s ease forwards;
 }
 
 .mobile-nav a {
@@ -194,144 +145,65 @@ nav a:hover, nav a.active {
     font-size: calc(16px + 0.3vw);
     padding: 15px 0;
     border-bottom: 1px solid rgba(157, 0, 0, 0.2);
-    transition: color 0.3s ease;
-}
-
-.mobile-nav a:last-child {
-    border-bottom: none;
 }
 
 .mobile-nav a:hover, .mobile-nav a.active {
     color: var(--rojo);
 }
 
-/* Estilos para el menú desplegable en móvil */
-.mobile-nav a {
-    position: relative;
-}
-
-.mobile-dropdown-toggle {
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    padding: 10px;
-}
-
-.mobile-dropdown-toggle i {
-    font-size: 16px;
-    transition: transform 0.3s ease;
-}
-
-.mobile-dropdown-toggle.active i {
-    transform: rotate(180deg);
-}
-
-.mobile-dropdown-menu {
-    display: none;
-    background-color: rgba(0, 0, 0, 0.2);
-    padding: 0;
-    margin: 0;
-    overflow: hidden;
-    max-height: 0;
-    transition: all 0.3s ease;
-    width: 100%;
-    flex-direction: column;
-}
-
-.mobile-dropdown-menu.active {
-    display: flex;
-    max-height: 1000px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    border-radius: 5px;
-}
-
-.mobile-dropdown-menu a {
-    display: block;
-    padding: 15px 30px;
-    font-size: calc(16px + 0.2vw);
-    border-top: 1px solid rgba(157, 0, 0, 0.1);
-    text-align: left;
-    margin: 0;
-    width: 100%;
-}
-
-/* Secciones */
-section {
-    padding: 80px 5%;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-/* Home */
+/* Home / Inicio */
 .home {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 80px;
-    text-align: center;
+    width: 100%;
 }
 
 .home-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     max-width: 1200px;
     width: 100%;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .home-content {
-    margin-top: 30px;
+    margin-top: 20px;
     max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .home-content h1 {
     font-family: 'Emberly-Medium', serif;
+    font-weight: bold;
     font-size: calc(50px + 1.5vw);
     color: var(--rojo);
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .home-content p {
-    font-family: 'Montserrat-SemiBold', sans-serif;
+    font-family: 'Rubik-Medium', sans-serif;
     font-size: calc(14px + 0.3vw);
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     color: var(--crema);
     max-width: 80%;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .home-image {
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .home-image img {
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     border: 2px solid var(--rojo);
     object-fit: cover;
-    animation: float 4s ease-in-out infinite;
     box-shadow: 0 12px 25px rgba(157, 0, 0, 0.3);
-}
-
-@keyframes float {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-20px);
-    }
-    100% {
-        transform: translateY(0);
-    }
 }
 
 .roles {
@@ -339,7 +211,7 @@ section {
     flex-wrap: wrap;
     justify-content: center;
     gap: 15px;
-    margin: 30px 0;
+    margin: 20px 0;
 }
 
 .role {
@@ -348,13 +220,14 @@ section {
     border-radius: 5px;
     font-size: calc(12px + 0.2vw);
     font-family: 'Rubik-Medium', sans-serif;
+    color: var(--crema);
 }
 
 .cta-buttons {
     display: flex;
     justify-content: center;
     gap: 20px;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 .btn {
@@ -371,6 +244,7 @@ section {
     background-color: var(--rojo);
     color: var(--crema);
     box-shadow: 0 4px 15px rgba(157, 0, 0, 0.3);
+    border: none;
 }
 
 .btn-primary:hover {
@@ -390,137 +264,76 @@ section {
     transform: translateY(-3px);
 }
 
-/* Información */
-.informacion {
-    background-color: var(--crema);
-    padding: 80px 0;
-}
+/* =========================================
+   ESTILOS DE SECCIONES (SOBRE MÍ Y EXPERIENCIA)
+   ========================================= */
 
-.informacion-container {
-    max-width: 1200px;
-    margin: 0 auto;
+.informacion-container,
+.Experiencia-container {
+    max-width: 1100px;
+    margin: 120px auto 0 auto;
     padding: 0 20px;
+    width: 100%;
 }
 
-.informacion h2 {
+.informacion-container h2,
+.Experiencia-container h2 {
     font-family: 'Emberly-Medium', serif;
-    font-size: calc(50px + 1.2vw);
+    font-weight: bold;
+    font-size: calc(40px + 1.2vw);
     color: var(--rojo);
     margin-bottom: 40px;
     text-align: center;
 }
 
+/* Estructura Base Móvil (Columna única, texto centrado, imagen al fondo) */
 .informacion-flex {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    gap: 50px;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
 }
 
 .informacion-content {
-    flex: 1;
+    width: 100%;
+    max-width: 750px;
     text-align: center;
+    order: 1; /* Texto primero en móvil */
 }
 
 .informacion-content p {
-    font-family: 'Rubik-SemiBold', sans-serif;
-    font-size: calc(16px + 0.3vw);
+    font-family: 'Rubik-Medium', sans-serif;
+    font-size: calc(15px + 0.2vw);
     margin-bottom: 20px;
-    color: var(--negro);
-    line-height: 1.6;
+    color: var(--crema);
+    line-height: 1.7;
 }
 
 .informacion-content p.destacado {
     font-family: 'Rubik-SemiBold', sans-serif;
-    font-size: calc(16px + 0.4vw);
-    margin-bottom: 25px;
+    font-size: calc(17px + 0.3vw);
 }
 
 .informacion-content p span {
     color: var(--rojo);
-    font-family: 'Rubik-SemiBold', sans-serif;
+    font-family: 'Rubik-Bold', sans-serif;
 }
 
 .informacion-image {
-    flex: 1;
     display: flex;
     justify-content: center;
-}
-
-.informacion-image img {
-    width: 400px;
-    height: auto;
-    max-width: 100%;
-    /*border: 5px solid var(--rojo);*/
-    animation: float 4s ease-in-out infinite;
-    /*Sbox-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);*/
-}
-
-/* Información 2 */
-.Education {
-    background-color: var(--gris);
-    padding: 80px 0;
-}
-
-.Education-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.Education h2 {
-    font-family: 'Emberly-Medium', serif;
-    font-size: calc(50px + 1.2vw);
-    color: var(--rojo);
-    margin-bottom: 40px;
-    text-align: center;
-    text-shadow:1.5px 1.5px var(--negro) ;
-}
-
-.Education-flex {
-    display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 50px;
-}
-
-.Education-content {
-    flex: 1;
-    text-align: center;
-}
-
-.Education-content p {
-    font-family: 'Rubik-SemiBold', sans-serif;
-    font-size: calc(14px + 0.3vw);
-    margin-bottom: 20px;
-    color: var(--negro);
-    line-height: 1.6;
-}
-
-.Education-content p span {
-    color: var(--rojo);
-    font-family: 'Rubik-SemiBold', sans-serif;
-    text-shadow:1.5px 1.5px var(--negro) ;
-}
-
-.Education-container p {
-    color: var(--crema);
-    font-size: calc(18px + 0.4vw);
-    text-shadow:2px 2px var(--negro) ;    
-}
-.informacion-image {
-    flex: 1;
-    display: flex;
-    justify-content: center;
+    width: 100%;
+    order: 2; /* Imagen al fondo en móvil para ambas secciones */
 }
 
 .informacion-image img {
-    width: 400px;
+    width: 420px;
     height: auto;
     max-width: 100%;
-    /*border: 5px solid var(--rojo);*/
-    animation: float 4s ease-in-out infinite;
-    /*Sbox-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);*/
+    object-fit: contain;
 }
 
 
@@ -554,94 +367,103 @@ section {
 }
 
 .cv-button {
-    margin-top: 35px;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+/* =========================================
+   DISEÑO PARA ESCRITORIO / PC (min-width: 769px)
+   ========================================= */
+@media (min-width: 769px) {
+    .informacion-flex {
+        flex-direction: row; /* Columnas lado a lado */
+        gap: 60px;
+        align-items: center;
+    }
+
+    .informacion-content {
+        flex: 1;
+        text-align: center; /* Texto centrado en su mitad de la página */
+        order: unset;
+    }
+
+    .informacion-image {
+        flex: 1;
+        order: unset;
+    }
+
+    /* En la sección Experiencia (PC): Imagen a la izquierda, Texto a la derecha */
+    .experiencia-flex .informacion-image {
+        order: 1;
+    }
+
+    .experiencia-flex .informacion-content {
+        order: 2;
+    }
+}
+
+/* =========================================
+   DISEÑO PARA MÓVIL (max-width: 768px)
+   ========================================= */
+@media (max-width: 768px) {
+    nav {
+        display: none;
+    }
+    .menu-icon {
+        display: block;
+    }
+
+    /* Aseguramos que en móvil la imagen SIEMPRE vaya abajo del texto en Experiencia */
+    .experiencia-flex .informacion-content {
+        order: 1;
+    }
+
+    .experiencia-flex .informacion-image {
+        order: 2;
+    }
+
+    .informacion-container,
+    .Experiencia-container {
+        margin-top: 80px;
+    }
 }
 
 /* Portafolios */
+.portafolios-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+    text-align: center;
+}
+
 .portafolios h2 {
     font-family: 'Emberly-Medium', serif;
-    font-size: calc(50px + 1.2vw);
+    font-weight: bold;
+    font-size: calc(40px + 1vw);
     color: var(--rojo);
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     text-align: center;
 }
 
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-}
+/* =========================================
+   ESTILOS PARA LA SECCIÓN DE CONTACTO Y FORMULARIO
+   ========================================= */
 
-.portfolio-item {
-    background-color: var(--crema);
-    border-radius: 10px;
-    overflow: hidden;
-    color: var(--negro);
-    height: 400px;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid rgba(157, 0, 0, 0.2);
-}
-
-.portfolio-item:hover {
-    transform: translateY(-10px);
-}
-
-.portfolio-image {
-    height: 200px;
-    overflow: hidden;
-}
-
-.portfolio-image img {
+.contacto-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
 }
 
-.portfolio-item:hover .portfolio-image img {
-    transform: scale(1.1);
-}
-
-.portfolio-content {
-    padding: 20px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-}
-
-.portfolio-content h3 {
-    font-family: 'Montserrat-SemiBold', sans-serif;
-    font-size: calc(16px + 0.4vw);
-    margin-bottom: 10px;
-    color: var(--rojo);
-}
-
-.portfolio-content p {
-    font-family: 'Rubik-Medium', sans-serif;
-    font-size: calc(12px + 0.2vw);
-    margin-bottom: 20px;
-    flex: 1;
-}
-
-.portfolio-content a {
-    align-self: center;
-    margin-top: auto;
-}
-
-/* Contacto */
-.contacto {
-    background-color: var(--crema);
-}
-
-.contacto h2 {
+.contacto-container h2 {
     font-family: 'Emberly-Medium', serif;
-    font-size: calc(70px + 1.2vw);
+    font-weight: bold;
+    font-size: calc(40px + 1.2vw);
     color: var(--rojo);
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     text-align: center;
 }
 
@@ -650,7 +472,8 @@ section {
     flex-direction: column;
     align-items: center;
     gap: 15px;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
+    width: 100%;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
@@ -659,25 +482,21 @@ section {
 .contact-option {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
     padding: 15px 30px;
     background-color: var(--gris);
     color: var(--crema);
     border-radius: 30px;
     cursor: pointer;
     transition: all 0.3s ease;
-    margin: 5px 0;
     width: 100%;
     justify-content: center;
+    font-family: 'Rubik-SemiBold', sans-serif;
+    font-size: 18px;
 }
 
-.contact-option-wide {
-    width: 100%;
-    padding: 15px 30px;
-}
-
-.contact-option i{
-    font-size: 2vw;
+.contact-option i {
+    font-size: 24px;
 }
 
 .contact-option:hover {
@@ -689,6 +508,7 @@ section {
 .contact-form {
     max-width: 600px;
     margin: 0 auto;
+    width: 100%;
 }
 
 .form-group {
@@ -702,9 +522,14 @@ section {
     background-color: var(--gris);
     border: none;
     border-radius: 5px;
-    font-family: 'Montserrat-SemiBold', sans-serif;
-    color: var(--rojo);
+    font-family: 'Rubik-Medium', sans-serif;
+    color: var(--crema);
     font-size: calc(14px + 0.2vw);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(245, 245, 220, 0.7);
 }
 
 .form-group textarea {
@@ -725,6 +550,98 @@ section {
     text-align: center;
 }
 
+/* Ajuste responsive para filas de formulario en móviles */
+@media (max-width: 768px) {
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+
+/* =========================================
+   ESTILOS PARA LA SECCIÓN DE PORTAFOLIOS
+   ========================================= */
+
+.portafolios-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.portafolios-container h2 {
+    font-family: 'Emberly-Medium', serif;
+    font-weight: bold;
+    font-size: calc(40px + 1.2vw);
+    color: var(--rojo);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.portafolios-intro {
+    font-family: 'Rubik-Medium', sans-serif;
+    font-size: calc(14px + 0.3vw);
+    color: var(--crema);
+    margin-bottom: 50px;
+}
+
+.portfolio-category {
+    background-color: rgba(157, 0, 0, 0.03);
+    border: 1px solid rgba(157, 0, 0, 0.15);
+    border-radius: 20px;
+    padding: 40px 30px;
+}
+
+.portfolio-category h3 {
+    font-family: 'Emberly-Medium', serif;
+    font-size: calc(24px + 0.5vw);
+    color: var(--rojo);
+    margin-bottom: 10px;
+}
+
+.category-desc {
+    font-family: 'Rubik-Regular', sans-serif;
+    font-size: calc(13px + 0.2vw);
+    color: #c5c5c5;
+    margin-bottom: 30px;
+}
+
+/* Cuadrícula para la simulación del carrusel de diseño gráfico */
+.portfolio-grid-design {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.design-item {
+    background-color: #0b0b14;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(157, 0, 0, 0.3);
+    aspect-ratio: 4/3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.design-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--rojo);
+}
+
+.design-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.category-btn {
+    margin-top: 20px;
+}
+
 /* Footer */
 footer {
     background-color: var(--negro);
@@ -735,501 +652,354 @@ footer {
     border-top: 1px solid var(--rojo);
 }
 
-/* Animaciones */
-@keyframes slideDown {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
+/* Responsive */
+@media (max-width: 768px) {
+    nav {
+        display: none;
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    .menu-icon {
+        display: block;
     }
 }
 
-/* VideoPortafolio */
-.VideoPortafolio {
-    background-color: var(--negro);
-    padding: 100px 5% 80px;
-    min-height: 100vh;
+/* =========================================
+   ESTILOS ESTILO ADOBE PORTFOLIO (DISEÑO GRÁFICO)
+   ========================================= */
+
+.adobe-portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.adobe-project-card {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-}
-
-.VideoPortafolio h2 {
-    font-family: 'Emberly-Medium', serif;
-    font-size: calc(50px + 1.2vw);
-    color: var(--rojo);
-    margin-bottom: 50px;
     text-align: center;
+    background: transparent;
+    transition: transform 0.3s ease;
 }
 
-.video-principal-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 3vw;
-    align-items: center;
-    justify-content: space-between;
-    margin: 40px 0;
-    max-width: 90vw;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: var(--crema); /* El fondo crema que querías */ 
+.adobe-project-card:hover {
+    transform: translateY(-8px);
 }
 
-@media (min-width: 1920px) {
-    .video-principal-container {
-        max-width: 1800px;
-    }
-}
-
-.video-principal-container iframe {
-    flex: 1;
-    min-width: 300px;
-    max-width: 60vw;
-    height: auto;
-    aspect-ratio: 16/9;
-    border-radius: 1vw;
-    box-shadow: 0 1vw 3vw rgba(0, 0, 0, 0.3);
-}
-
-.video-info {
-    background-color: var(--crema) !important;
-    color: var(--negro) !important;
-    border: 2px solid var(--rojo); /* El marco rojo */
-    flex: 1;
-    min-width: 300px;
-    max-width: 500px;
-    padding: 0 20px;
-    border-radius: 15px; /* <--- AÑADE ESTA LÍNEA */
-}
-
-.video-info h3 {
-    font-family: 'Emberly-Medium', serif;
-    font-size: calc(34px + 0.5vw);
-    color: var(--rojo);
-    margin-bottom: 20px;
-}
-
-.video-info p {
-    font-family: 'Rubik-Medium', sans-serif;
-    font-size: calc(18px + 0.3vw);
-    margin-bottom: 20px;
-    color: var(--negro);
-}
-
-.video-info ul {
-    list-style: none;
-    margin-left: 10px;
-}
-
-.video-info ul li {
-    font-family: 'Rubik-Medium', sans-serif;
-    font-size: calc(18px + 0.2vw);
-    margin-bottom: 10px;
-    color: var(--negro);
-}
-
-/* Estilos para el carrusel Swiper */
-.video-carousel {
-    width: 100%;
-    max-width: 90vw;
-    margin: 0 auto;
-    padding: 3vw 0;
-    overflow: visible;
-}
-
-.swiper-slide {
-    width: 55vw !important;
-    min-width: 450px;
-    max-width: 800px;
-    height: auto;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    opacity: 0.8;
-    transform: scale(0.9);
-}
-
-.swiper-slide-active {
-    opacity: 1;
-    transform: scale(1);
-    z-index: 5;
-}
-
-.video-card {
-    background-color: var(--negro);
-    border-radius: 1.2vw;
-    overflow: hidden;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 1vw 2vw rgba(0, 0, 0, 0.3);
-    border: 3px solid rgba(157, 0, 0, 0.4);
-    transition: all 0.5s ease;
-    margin: 1vw 0;
-    padding-bottom: 0;
-}
-
-.video-card:hover {
-    transform: translateY(-0.8vw);
-    box-shadow: 0 1.5vw 3vw rgba(0, 0, 0, 0.3);
-}
-
-.video-card-content {
-    display: flex;
-    flex-direction: row;
-    height: 100%;
-    background: linear-gradient(135deg, var(--crema) 0%, #f5f0e8 100%);
-    align-items: stretch;
-}
-
-.video-thumbnail {
+/* Contenedor del carrusel automático */
+.adobe-carousel {
     position: relative;
-    width: 50%;
-    min-width: 200px;
+    width: 100%;
+    aspect-ratio: 4/3;
+    border-radius: 10px;
     overflow: hidden;
-    border-right: 3px solid rgba(157, 0, 0, 0.3);
-    aspect-ratio: 16/9;
-    min-height: 220px; /* Aumentamos la altura mínima */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background-color: #0b0b14;
+    border: 1px solid rgba(157, 0, 0, 0.3);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
-.video-thumbnail iframe {
+.adobe-carousel img.carousel-img {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    border: none;
-    border-radius: 0.5vw 0 0 0.5vw;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
 }
 
-.video-card .video-info {
-    padding: 2.5vw 1.5vw;
-    flex: 1;
+.adobe-carousel img.carousel-img.active {
+    opacity: 1;
+}
+
+.adobe-project-card h4 {
+    font-family: 'Rubik-SemiBold', serif;
+    font-size: calc(16px + 0.3vw);
+    color: var(--crema);
+    margin-top: 15px;
+    transition: color 0.3s ease;
+}
+
+.adobe-project-card:hover h4 {
+    color: var(--rojo);
+}
+
+/* =========================================
+   ESTILOS PARA EL MARCO DE VIDEO EN DIRECCIÓN DE ARTE
+   ========================================= */
+
+.video-frame-container {
+    width: 100%;
+    max-width: 520px;
+    aspect-ratio: 16 / 9;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 2px solid var(--rojo);
+    box-shadow: 0 10px 30px rgba(157, 0, 0, 0.3);
+    background-color: var(--negro);
+}
+
+.video-frame-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Alineación móvil para el botón de Behance en Dirección de Arte */
+@media (max-width: 768px) {
+    .informacion-content .category-btn {
+        text-align: center !important;
+    }
+}
+
+/* =========================================
+   ESTILOS PARA ÁLBUMES DE FOTOGRAFÍA PROFESIONAL
+   ========================================= */
+
+.photo-portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 35px;
+    margin-top: 30px;
+}
+
+.photo-album-card {
     display: flex;
     flex-direction: column;
-    background-color: transparent;
-    color: var(--negro);
-    min-width: auto;
-    max-width: none;
-    justify-content: center;
-    width: 50%;
-    min-height: 220px; /* Aseguramos que tenga la misma altura mínima que el thumbnail */
+    background-color: #0b0b14;
+    border: 1px solid rgba(157, 0, 0, 0.3);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
 }
 
-.video-card .video-info h3 {
-    font-family: 'Emberly-Medium', serif;
-    font-size: calc(18px + 0.6vw);
-    margin-bottom: 1.5vw;
-    color: var(--rojo);
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+.photo-album-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--rojo);
+    box-shadow: 0 12px 30px rgba(157, 0, 0, 0.35);
 }
 
-.video-card .video-info p {
-    font-family: 'Rubik-Medium', sans-serif;
-    font-size: calc(14px + 0.3vw);
-    margin-bottom: 2vw;
-    color: var(--negro);
-    line-height: 1.6;
+/* Contenedor de la imagen con proporción vertical (3/4) */
+.photo-card-media {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    background-color: var(--negro);
 }
 
-.video-card .video-info a {
-    align-self: center;
-    margin-top: auto;
+.photo-card-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.photo-album-card:hover .photo-card-media img {
+    transform: scale(1.06);
+}
+
+/* Overlay interactivo para escritorio */
+.photo-card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 11, 0.6);
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 0.5vw;
-    padding: 0.8vw 1.8vw;
-    font-size: calc(12px + 0.3vw);
-    border-radius: 0.6vw;
-    box-shadow: 0 0.4vw 0.8vw rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
-    font-weight: bold;
+    gap: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    color: var(--crema);
 }
 
-.youtube-icon {
-    width: calc(16px + 0.3vw);
-    height: calc(16px + 0.3vw);
-    filter: brightness(0) invert(1);
-}
-
-/* Estilos para los botones de navegación de Swiper */
-.swiper-button-next, .swiper-button-prev {
-    color: transparent;
-    background-color: transparent;
-    width: calc(40px + 1vw);
-    height: calc(40px + 1vw);
-    transition: all 0.3s ease;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: calc(30px + 0.8vw);
-    filter: brightness(0) saturate(100%) invert(11%) sepia(82%) saturate(5407%) hue-rotate(356deg) brightness(94%) contrast(114%);
-    z-index: 10;
-}
-
-.swiper-button-next {
-    background-image: url('../Assest/Imagenes/bxs-chevrons-right.svg');
-    right: 1vw;
-}
-
-.swiper-button-prev {
-    background-image: url('../Assest/Imagenes/bxs-chevrons-left.svg');
-    left: 1vw;
-}
-
-.swiper-button-next:hover, .swiper-button-prev:hover {
-    transform: scale(1.15);
-    filter: brightness(0) saturate(100%) invert(94%) sepia(6%) saturate(1013%) hue-rotate(344deg) brightness(108%) contrast(96%);
-}
-
-.swiper-button-next:after, .swiper-button-prev:after {
-    display: none;
-}
-
-/* Estilos para la paginación de Swiper */
-.swiper-pagination-bullet {
-    width: calc(8px + 0.3vw);
-    height: calc(8px + 0.3vw);
-    background-color: var(--crema);
-    opacity: 0.5;
-    transition: all 0.3s ease;
-    margin: 0 0.5vw;
-}
-
-.swiper-pagination-bullet-active {
+.photo-album-card:hover .photo-card-overlay {
     opacity: 1;
-    background-color: var(--rojo);
-    transform: scale(1.2);
-    box-shadow: 0 0 0.5vw rgba(157, 0, 0, 0.5);
 }
 
-/* Estilos para centrar textos */
-.text-center {
-    text-align: center;
-}
-
-/* Estilos para la sección de DemoReal */
-.DemoReal {
-    background-color: var(--gris);
-    padding: 80px 5%;
-}
-
-.DemoReal h2 {
-    font-family: 'Emberly-Medium', serif;
-    font-size: calc(50px + 1.2vw);
+.photo-icon {
+    font-size: 38px;
     color: var(--rojo);
-    margin-bottom: 30px;
+}
+
+.photo-card-overlay span {
+    font-family: 'Rubik-SemiBold', sans-serif;
+    font-size: calc(13px + 0.2vw);
+    background-color: var(--rojo);
+    padding: 8px 16px;
+    border-radius: 20px;
+}
+
+/* Información del álbum colocada debajo de la foto */
+.photo-card-info {
+    padding: 22px 20px;
+    text-align: center;
+    background-color: #0b0b14;
+}
+
+.photo-card-info h4 {
+    font-family: 'Emberly-Medium', serif;
+    font-size: calc(20px + 0.3vw);
+    color: var(--crema);
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.photo-album-card:hover .photo-card-info h4 {
+    color: var(--rojo);
+}
+
+.photo-card-info p {
+    font-family: 'Rubik-Regular', sans-serif;
+    font-size: calc(13px + 0.2vw);
+    color: #c5c5c5;
+    line-height: 1.5;
+}
+
+/* Ajustes adaptables para móviles */
+@media (max-width: 768px) {
+    .photo-portfolio-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .photo-card-media {
+        aspect-ratio: 4 / 5; /* Ligero ajuste para pantallas pequeñas */
+    }
+
+    /* En móvil, el overlay permanece discreto y visible con toque táctil */
+    .photo-card-overlay {
+        display: none; /* Desactivamos el overlay superpuesto para mantener limpia la imagen en pantallas pequeñas */
+    }
+}
+
+/* =========================================
+   ESTILOS PARA LA SECCIÓN DE MIS SERVICIOS Y TARIFAS
+   ========================================= */
+
+.servicios-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
     text-align: center;
 }
 
-/* Estilos para la sección de VideoPortafolio */
-.VideoPortafolio {
-    background-color: var(--negro);
-    padding: 80px 5%;
+.servicios-container h2 {
+    font-family: 'Emberly-Medium', serif;
+    font-weight: bold;
+    font-size: calc(40px + 1.2vw);
+    color: var(--rojo);
+    margin-bottom: 10px;
 }
 
-.VideoPortafolio h2 {
-    margin-bottom: 30px;
-}
-    /* Fin de los estilos para el carrusel de videos */
-
-/* Responsive */
-@media (max-width: 992px) {
-    .home-container, .informacion-flex {
-        flex-direction: column;
-    }
-    
-    .home-container {
-        text-align: center;
-    }
-    
-    .home-image {
-        margin: 0 auto 30px;
-        max-width: 80%;
-    }
-    
-    .informacion-image {
-        margin-top: 50px;
-    }
-    
-    .roles, .social-links {
-        justify-content: center;
-    }
-    
-    .cta-buttons {
-        justify-content: center;
-    }
-    
-    .portfolio-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .video-principal-container {
-        flex-direction: column;
-    }
-    
-    .video-principal-container iframe {
-        width: 100%;
-        max-width: 100%;
-    }
-    
-    .video-info {
-        max-width: 100%;
-        text-align: center;
-    }
-    
-    .carousel-button.prev {
-        margin-left: 10px;
-    }
-    
-    .carousel-button.next {
-        margin-right: 10px;
-    }
-    /* ... otros estilos ... */
-    
-    .contact-option i {
-        font-size: 3.5vw; /* Un poco más grande para tablets que el 2vw original */
-    }
-    
-    .contact-option {
-        font-size: 20px;
-    }
+.servicios-intro {
+    font-family: 'Rubik-Medium', sans-serif;
+    font-size: calc(14px + 0.3vw);
+    color: var(--crema);
+    margin-bottom: 20px;
 }
 
-@media (max-width: 768px) {
-  /* ... tus otros estilos de móvil ... */
-
-    .video-card {
-        margin-bottom: 30px; /* Separación entre tarjetas */
-        height: auto !important;
-    }
-
-    .video-card-content {
-        flex-direction: column !important;
-        height: auto !important;
-        border: 2px solid var(--rojo) !important; /* Forzamos que el marco se vea */
-        border-radius: 15px;
-        overflow: hidden; /* ¡CLAVE! Esto hace que el video respete las esquinas redondeadas */
-        background-color: var(--negro);
-        display: flex !important;
-    }
-
-    .video-thumbnail {
-        width: 100% !important;
-        height: auto !important;
-        aspect-ratio: 16 / 9; /* Esto hace que el video siempre tenga la forma correcta en cualquier celular */
-        flex: 0 0 auto !important;
-    }
-
-    .video-info {
-        width: 100% !important;
-        padding: 1.5rem !important; /* Más espacio para que el texto no toque el borde */
-        text-align: center;
-        background-color: var(--negro);
-        flex: 1 1 auto;
-    }
-
-    .video-info h3 {
-        margin-top: 0;
-        margin-bottom: 10px;
-    }
-
-    nav {
-        display: none;
-    }
-    
-    .menu-icon {
-        display: block;
-    }
-    
-    .portfolio-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .form-row {
-        flex-direction: column;
-        gap: 20px;
-    }
-    
-    .home {
-        padding-top: 100px;
-    }
-    
-    .mobile-nav {
-        padding-left: 5%;
-        padding-right: 5%;
-    }
-    
-    .contact-option {
-        max-width: 100%;
-    }
-    /* Ajustes para las flechas del portafolio en móvil */
-    .swiper-button-next, 
-    .swiper-button-prev {
-        width: 50px !important; 
-        height: 50px !important;
-        
-        /* Fondo: Rojo de tu marca con 70% de opacidad */
-        background-color: rgba(157, 0, 0, 0.7) !important; 
-        
-        /* Color de la flecha interna: Blanco puro */
-        color: #ffffff !important; 
-        
-        /* IMPORTANTE: Quitamos el filtro que causaba el error */
-        filter: none !important;
-        
-        border-radius: 50%;
-        display: flex !important;
-        align-items: center;
-        justify-content: center;
-    }
-
-    /* Esto ajusta el tamaño de la flecha de Swiper específicamente */
-    .swiper-button-next::after, 
-    .swiper-button-prev::after {
-        font-size: 18px !important; /* Flecha un poco más pequeña que el círculo */
-        font-weight: bold;
-    }
-
-    /* Posicionamiento para que no se salgan de la pantalla */
-    .swiper-button-next {
-        right: 5px !important;
-    }
-    .swiper-button-prev {
-        left: 5px !important;
-    }
-    /* ... otros estilos ... */
-
-    .contact-options {
-        gap: 20px; /* Más espacio entre botones */
-        padding: 0 10px;
-    }
-
-    .contact-option {
-        padding: 20px 25px; /* Botones más altos para el dedo */
-        width: 100%;
-        max-width: 100%;
-        border-radius: 15px; /* Bordes un poco menos redondeados para que se vean más sólidos */
-    }
-
-    .contact-option i {
-        font-size: 28px !important; /* Tamaño fijo para que no desaparezca */
-        margin-right: 15px;
-    }
-
-    .contact-option span, 
-    .contact-option {
-        font-size: 18px !important; /* Texto más legible */
-        font-weight: bold;
-    }
+/* Badge de Oferta de Lanzamiento */
+.promo-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: rgba(157, 0, 0, 0.15);
+    border: 1px solid var(--rojo);
+    padding: 8px 20px;
+    border-radius: 20px;
+    margin-bottom: 45px;
+    color: var(--crema);
+    font-family: 'Rubik-SemiBold', sans-serif;
+    font-size: calc(13px + 0.2vw);
 }
 
-.DemoReal {
-    background-color: var(--crema); /* O el color que prefieras, por ejemplo #0a0a0a */
-    padding-top: 100px; /* Un poco de espacio extra arriba por el header fijo */
+.promo-badge i {
+    color: var(--rojo);
+    font-size: 18px;
+}
+
+/* Grid de Tarjetas de Servicios */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background-color: #0b0b14;
+    border: 1px solid rgba(157, 0, 0, 0.3);
+    border-radius: 15px;
+    padding: 35px 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--rojo);
+    box-shadow: 0 10px 25px rgba(157, 0, 0, 0.3);
+}
+
+.service-icon {
+    font-size: 45px;
+    color: var(--rojo);
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    font-family: 'Emberly-Medium', serif;
+    font-size: calc(20px + 0.3vw);
+    color: var(--crema);
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    font-family: 'Rubik-Regular', sans-serif;
+    font-size: calc(13px + 0.2vw);
+    color: #c5c5c5;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+/* Estilos de Precio en la Tarjeta */
+.service-price {
+    margin-top: auto; /* Empuja el precio y botón al fondo de la tarjeta */
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.price-label {
+    font-family: 'Rubik-Regular', sans-serif;
+    font-size: 12px;
+    color: var(--gris);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.price-amount {
+    font-family: 'Rubik-Bold', sans-serif;
+    font-size: calc(22px + 0.4vw);
+    color: var(--rojo);
+}
+
+.service-btn {
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 20px;
+    font-size: calc(13px + 0.2vw);
 }

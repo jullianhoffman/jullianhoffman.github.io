@@ -3,274 +3,514 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jullián Hoffman | Productor Audiovisual</title>
+    
+    <!-- SEO: Título y Descripción optimizados para motores de búsqueda -->
+    <title>Jullián Hoffman | Director Creativo, Productor y Diseñador Gráfico</title>
+    <meta name="description" content="Portafolio profesional de Jullián Hoffman. Dirección creativa, diseño gráfico, fotografía profesional, producción audiovisual y streaming en Honduras y remoto.">
+    <meta name="keywords" content="Jullián Hoffman, Director Creativo, Productor Audiovisual, Diseñador Gráfico, Fotografía Profesional, Honduras, Sonaguera, Behance, VTuber, Streaming">
+    <meta name="author" content="Jullián Hoffman">
+
+    <!-- SEO Social / Open Graph (Para cuando compartas tu web en WhatsApp, Facebook, LinkedIn) -->
+    <meta property="og:title" content="Jullián Hoffman | Director Creativo">
+    <meta property="og:description" content="Explora mi portafolio de dirección creativa, diseño, fotografía y producción audiovisual.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jullianhoffman.github.io/">
+    <meta property="og:image" content="https://jullianhoffman.github.io/Assest/Imagenes/Foto%20principal.jpeg">
+
+    <!-- Favicon e Iconos -->
     <link rel="icon" href="Assest/Imagenes/Jullián Hoffman_Monograma Negativo.svg">
+    
+    <!-- Hojas de Estilo -->
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="CSS/animations.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> <!--https://v2.boxicons.com/ es la pagina donde se encuentran los vectores-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Google tag (gtag.js) - Google Analytics Definitivo -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FM34G7T95R"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-FM34G7T95R');
+    </script>
 </head>
+
 <body>
-    <!-- Header y Navegación -->
+    <!-- Header y Navegación Dinámica -->
     <header>
         <a href="#" class="logo">
             <img src="Assest/Imagenes/Jullián Hoffman_Imagologo Negativo.svg" alt="Jullián Hoffman Logo" width="auto" height="60">
         </a>
         <nav>
-            <a href="#home" class="active">Inicio</a>
-            <a href="#informacion">Mi Perfil</a>
-            <a href="#portafolios" class="dropdown-toggle">Portafolio </a>
-            <!--<div class="dropdown">
-                <a href="#portafolios" class="dropdown-toggle">Portafolio <i class='bx bxs-chevrons-down'></i></a>
-                <div class="dropdown-menu">
-                    <a href="Portafolio_Video.html">Portafolio Videográfico</a>
-                    <a href="Portafolio_de_Diseño.html">Portafolio de Diseño</a>
-                    <a href="Portafolio_de_Animacion.html">Portafolio de Animación</a>
-                    <a href="Portafolio_de_Fotografia.html">Portafolio Fotográfico</a>
-                </div> 
-            </div>-->
-            <a href="#contacto">Contacto</a>
+            <a href="#" class="nav-link active" data-target="home">Inicio</a>
+            <a href="#" class="nav-link" data-target="portafolios">Portafolio</a>
+            <a href="#" class="nav-link" data-target="servicios">Mis Servicios</a>
+            <a href="#" class="nav-link" data-target="contacto">Contacto</a>
         </nav>
         <div class="menu-icon">
             <i class='bx bx-menu'></i>
         </div>
     </header>
 
-    <!-- Sección Home -->
-    <section id="home" class="home">
-        <div class="home-container">
-            <div class="home-image">
-                <img src="Assest/Imagenes/Foto principal.jpeg" alt="Jullián Hoffman">
+    <!-- Vista 1: Inicio ( Landing page unificada ) -->
+<section id="home" class="page-section active">
+    
+    <!-- Bloque 1: Presentación Principal -->
+    <div class="home-container">
+        <div class="home-image">
+            <img src="Assest/Imagenes/Foto principal.jpeg" alt="Jullián Hoffman">
+        </div>
+        
+        <div class="home-content">
+            <h1>Jullián Hoffman</h1>
+            <p>Director Creativo especializado en diseño gráfico, fotografía y producciones audiovisuales de alto impacto.</p>
+            
+            <div class="roles">
+                <div class="role">Director Creativo</div>
+                <div class="role">Productor Audiovisual</div>
+                <div class="role">Fotógrafo</div>
+                <div class="role">Diseñador Gráfico</div>
             </div>
             
-            <div class="home-content">
-                <h1>Jullián Hoffman</h1>
-                <p>Narrativas Visuales que inspiran, y diseñador gráfico especializado en proyectos de alto impacto.</p>
-                
-                <div class="roles">
-                    <div class="role">Director Creativo</div>
-                    <div class="role">Productor Audiovisual</div>
-                    <div class="role">Motion Designer</div>
-                    <div class="role">Diseñador Gráfico</div>
-                </div>
-                
-                <div class="cta-buttons">
-                    <a href="https://wa.me/50493887101?text=Buenas.%0AVengo%20de%20la%20pagina%20web%20y%20me%20gustar%C3%ADa%20cotizar%20y/o%20consultar%20sobre%20sus%20servicios" class="btn btn-primary" target="_blank">
-                        <i class='bx bxl-whatsapp'></i> WhatsApp
-                    </a>
-                    <a href="#contacto" class="btn btn-outline">Contacto</a>
-                </div>
+            <div class="cta-buttons">
+                <a href="https://wa.me/50493887101" class="btn btn-primary" target="_blank">
+                    <i class='bx bxl-whatsapp'></i> WhatsApp
+                </a>
+                <button class="btn btn-outline nav-btn" data-target="contacto">Contacto</button>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Sección Información -->
-     
-    <section id="informacion" class="informacion">
+        <!-- Bloque 2: Sobre Mí -->
         <div class="informacion-container">
-            <h2>Perfil y Visión Profesional</h2>
-            
+            <h2>Sobre mí</h2>
             <div class="informacion-flex">
-
-                <div class="informacion-image">
-                    <img src="Assest/Imagenes/Imagen Informacion.png" alt="Jullián Hoffman trabajando">
-                </div>
-
                 <div class="informacion-content">
-                    <p class="destacado">Jullián Hoffman, <span>Director Creativo y Diseñador Gráfico</span> especializado en estrategia visual y 
-                        desarrollo multimedia. Fusiono el análisis de marca con la dirección técnica audiovisual para estructurar conceptos de alto impacto.</p>
-                    <p>Desde 2019 optimizo flujos de trabajo en el sector publicitario, postproducción cinematográfica y entornos 3D. Traduzco requerimientos 
-                        técnicos complejos en narrativas visuales de alto rendimiento comercial.</p>
+                    <p class="destacado">
+                        Jullián Hoffman, <span>Director Creativo y Diseñador Gráfico</span> enfocado en estructurar estrategias visuales de alto rendimiento comercial.
+                    </p>
+                    <p>
+                        Combino la dirección técnica audiovisual con metodologías sólidas de marca, transformando requerimientos complejos en conceptos estéticos claros y memorables.
+                    </p>
+                    <p>
+                        Disponible para integrarme en equipos de trabajo corporativos o liderar proyectos bajo la modalidad freelance con enfoque remoto desde Honduras.
+                    </p>
                     
                     <div class="social-links">
-                        <a href="https://wa.me/50493887101" target="_blank"><i class='bx bxl-whatsapp' ></i></a>
-                        <a href="https://www.linkedin.com/in/jullian-hoffman/" target="_blank"><i class='bx bxl-linkedin' ></i></a>
-                        <!--<a href="#" target="_blank"><i class='bx bxl-instagram'></i></a>-->
+                        <a href="https://wa.me/50493887101" target="_blank"><i class='bx bxl-whatsapp'></i></a>
+                        <a href="https://www.linkedin.com/in/jullian-hoffman/" target="_blank"><i class='bx bxl-linkedin'></i></a>
                         <a href="https://www.behance.net/jullinhoffman2" target="_blank"><i class='bx bxl-behance'></i></a>
                         <a href="https://www.youtube.com/@JullianHoffman-Audiovisual" target="_blank"><i class='bx bxl-youtube'></i></a>
                     </div>
                 </div>
+
+                <div class="informacion-image">
+                    <img src="Assest/Imagenes/Imagen Informacion.png" alt="Jullián Hoffman - Sobre Mí">
+                </div>
             </div>
         </div>
-    </section>
 
-    <section id="Education" class="Education">
-        <div class="Education-container">
-            <h2>Evolución y Especialización Continua</h2>
-            
-            <div class="Education-flex">
-                <div class="Education-content">
-                    <p>Formación sólida respaldada por una Licenciatura en Diseño Gráfico en curso (CEUTEC) y un Técnico en Producción Audiovisual. 
-                        Mi enfoque combina el rigor metodológico de marca con la ejecución técnica avanzada.</p>
-                    <p>Actualización constante mediante certificaciones internacionales en Inteligencia Artificial aplicada (IBM), entorno Adobe 
-                        y desarrollo web estructurado; un perfil híbrido adaptado a las exigencias del mercado.</p>
+        <!-- Bloque 3: Experiencia -->
+        <div class="Experiencia-container">
+            <h2>Experiencia</h2>
+            <div class="informacion-flex experiencia-flex">
+                <!-- La imagen va primero en el HTML; en CSS se controlará el orden -->
+                <div class="informacion-image">
+                    <img src="Assest/Imagenes/Imagen Experiencia.png" alt="Jullián Hoffman - Experiencia">
+                </div>
+
+                <div class="informacion-content">
+                    <p class="destacado">
+                        Trayectoria profesional activa desde 2019 respaldada por proyectos en <span>cine, publicidad, postproducción y desarrollo digital</span>.
+                    </p>
+                    <p>
+                        He coordinado equipos técnicos en sets de filmación, desarrollado identidades visuales corporativas, motion graphics avanzados y optimizado flujos creativos bajo rigurosos estándares de calidad.
+                    </p>
+                    <p>
+                        Mi perfil híbrido une la ejecución técnica de nivel experto con la visión estratégica de negocio. Conoce los detalles completos de mi trayectoria en mi currículum.
+                    </p>
                     
                     <div class="cv-button">
-                        <!-- <a href="Informacion.html" target="_blank" class="btn btn-primary">Más Información</a> -->
-                        <a href="Assest/Document/Jullián_Hoffman_CV_Español.pdf" target="_blank" class="btn btn-primary">Descargar CV</a>
+                        <a href="Assest/Document/Jullián_Hoffman_CV_Español.pdf" target="_blank" class="btn btn-primary">
+                            <i class='bx bx-file'></i> Descargar CV Completo
+                        </a>
                     </div>
                 </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Vista 2: Sección Mis Servicios -->
+    <section id="servicios" class="page-section">
+        <div class="servicios-container">
+            <h2>Mis Servicios</h2>
+            <p class="servicios-intro">Soluciones creativas e integrales diseñadas para potenciar tu marca y proyectos multimedia.</p>
+            
+            <!-- Subtítulo / Mensaje de Lanzamiento -->
+            <div class="promo-badge">
+                <i class='bx bx-star'></i>
+                <span>Tarifas preferenciales de lanzamiento para proyectos seleccionados.</span>
+            </div>
+            
+            <div class="services-grid">
                 
-                <!--<div class="informacion-image">
-                    <img src="Assest/Imagenes/Imagen Informacion.png" alt="Jullián Hoffman trabajando">
-                </div> -->
+                <!-- Tarjeta 1: Diseño Gráfico & Branding -->
+                <div class="service-card">
+                    <i class='bx bx-palette service-icon'></i>
+                    <h3>Diseño Gráfico & Branding</h3>
+                    <p>Desarrollo de identidad visual, branding corporativo, diseño publicitario y maquetación editorial.</p>
+                    <div class="service-price">
+                        <span class="price-label">Desde</span>
+                        <span class="price-amount">L. 2,900</span>
+                    </div>
+                    <a href="https://wa.me/50493887101?text=Hola%20Julli%C3%A1n,%20me%20interesa%20cotizar%20un%20proyecto%20de%20Dise%C3%B1o%20Gr%C3%A1fico%20%26%20Branding." target="_blank" class="btn btn-primary service-btn">
+                        <i class='bx bxl-whatsapp'></i> Cotizar Servicio
+                    </a>
+                </div>
+
+                <!-- Tarjeta 2: Producción Audiovisual -->
+                <div class="service-card">
+                    <i class='bx bx-video-recording service-icon'></i>
+                    <h3>Producción Audiovisual & Spots</h3>
+                    <p>Dirección de fotografía, rodaje comercial, montaje cinematográfico y postproducción integral.</p>
+                    <div class="service-price">
+                        <span class="price-label">Desde</span>
+                        <span class="price-amount">L. 6,800</span>
+                    </div>
+                    <a href="https://wa.me/50493887101?text=Hola%20Julli%C3%A1n,%20me%20interesa%20cotizar%20una%20Producci%C3%B3n%20Audiovisual%20/%20Spot." target="_blank" class="btn btn-primary service-btn">
+                        <i class='bx bxl-whatsapp'></i> Cotizar Servicio
+                    </a>
+                </div>
+
+                <!-- Tarjeta 3: Fotografía Profesional -->
+                <div class="service-card">
+                    <i class='bx bx-camera service-icon'></i>
+                    <h3>Fotografía Comercial & Retrato</h3>
+                    <p>Sesiones de retrato corporativo/editorial en estudio y fotografía comercial de productos.</p>
+                    <div class="service-price">
+                        <span class="price-label">Desde</span>
+                        <span class="price-amount">L. 1,500</span>
+                    </div>
+                    <a href="https://wa.me/50493887101?text=Hola%20Julli%C3%A1n,%20me%20interesa%20cotizar%20una%20sesi%C3%B3n%20de%20Fotograf%C3%ADa%20Profesional." target="_blank" class="btn btn-primary service-btn">
+                        <i class='bx bxl-whatsapp'></i> Cotizar Servicio
+                    </a>
+                </div>
+
+                <!-- Tarjeta 4: Streaming & Creadores -->
+                <div class="service-card">
+                    <i class='bx bx-joystick service-icon'></i>
+                    <h3>Diseño para Creadores & Streamers</h3>
+                    <p>Overlays animados, avatares 3D/VTuber, interfaces dinámicas e integración para OBS Studio.</p>
+                    <div class="service-price">
+                        <span class="price-label">Desde</span>
+                        <span class="price-amount">L. 2,100</span>
+                    </div>
+                    <a href="https://wa.me/50493887101?text=Hola%20Julli%C3%A1n,%20me%20interesa%20cotizar%20un%20paquete%20para%20Streaming%20/%20Creadores." target="_blank" class="btn btn-primary service-btn">
+                        <i class='bx bxl-whatsapp'></i> Cotizar Servicio
+                    </a>
+                </div>
+
             </div>
         </div>
     </section>
 
+    <!-- Vista 3: Sección Portafolios -->
+    <section id="portafolios" class="page-section">
+        <div class="portafolios-container">
+            
+            <!-- ENCABEZADO PRINCIPAL: DIRECCIÓN DE ARTE (Estructura tipo "Sobre Mí") -->
+            <div class="informacion-container" style="margin-top: 0; padding: 0;">
+                <h2>Dirección de Arte</h2>
+                
+                <div class="informacion-flex">
+                    <!-- Columna de texto a la izquierda -->
+                    <div class="informacion-content" style="text-align: center;">
+                        <p class="destacado">
+                            Lidero la <span>dirección creativa e identidad visual</span> de proyectos multimedia, asegurando coherencia estética y rendimiento comercial.
+                        </p>
+                        <p>
+                            Mi objetivo es proporcionarte a ti y a tu marca un flujo de trabajo transparente, estructurado y libre de fricciones desde el concepto inicial hasta la entrega final.
+                        </p>
+                        <p>
+                            Diseño narrativas visuales sólidas para campañas corporativas y creadores de contenido. Explora mi trabajo completo en plataformas profesionales.
+                        </p>
+                        
+                        <div class="category-btn" style="margin-top: 25px; text-align: center;">
+                            <a href="https://www.behance.net/jullinhoffman2" target="_blank" class="btn btn-primary">
+                                <i class='bx bxl-behance'></i> Ver Behance Completo
+                            </a>
+                        </div>
+                    </div>
 
-    <!-- Sección Portafolios -->
+                    <!-- Columna de video (Demo Reel) a la derecha -->
+                    <div class="informacion-image">
+                        <div class="video-frame-container">
+                            <iframe src="https://www.youtube.com/embed/u8D0fSDtfnU" title="Demo Reel Dirección de Arte" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-    <section id="portafolios" class="portafolios">
-        <h2>Proyectos destacados</h2>
-        <div class="portfolio-grid">
-            <div class="portfolio-item">
-                <div class="portfolio-image">
-                      <iframe width="100%" height="100%" src="https://www.youtube.com/embed/u8D0fSDtfnU?si=FXPGR3pBuH2kMV_m" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
-                <div class="portfolio-content">
-                    <h3>Cortometraje zarate</h3>
-                    <p>Dirección de Fotografía y Montaje para este proyecto cinematográfico de suspenso. 
-                        Enfoque centrado en la creación de atmósferas inmersivas, composición de encuadres y diseño de iluminación en baja clave</p>
-                </div>
-            </div>
-            
-            <div class="portfolio-item">
-                <div class="portfolio-image">
-                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/FmPq3pZcNI4?si=Dz7uUhPXla4aE5Pn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
-                <div class="portfolio-content">
-                    <h3>Entre Nubes</h3>
-                    <p>Dirección de Fotografía y producción técnica para esta pieza audiovisual junto a Armando. 
-                        Gestión de cámaras en exteriores, captura de entornos naturales y control de calidad visual en el rodaje.</p>
-                </div>
-            </div>
-            
-            <div class="portfolio-item">
-                <div class="portfolio-image">
-                     <iframe width="100%" height="100%" src="https://www.youtube.com/embed/xnNxnS0exJE?si=dR6aYlg_bHaMkh98" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
-                <div class="portfolio-content">
-                    <h3>Talento U Latina</h3>
-                    <p>Dirección técnica en vivo, conducción y diseño de efectos visuales (VFX) para esta transmisión institucional. 
-                        Control completo de consola multimedia y creación de gráficos animados para entornos de tiempo real..</p>
-                </div>
-            </div>
-            
-        </div> 
-        <!--<div class="portfolio-grid">
-            <div class="portfolio-item">
-                <div class="portfolio-image">
-                    <img src="Assest/Imagenes/Portafolio Videografico.png" alt="Portafolio Videográfico">
-                </div>
-                <div class="portfolio-content">
-                    <h3>Portafolio Videográfico</h3>
-                    <p>Cine, televisión y publicidad: videos cinematográficos, spots publicitarios y contenido para redes sociales.</p>
-                    <a href="Portafolio_Video.html" class="btn btn-primary">Ver Portafolio</a>
-                </div>
-            </div>
-            
-            <div class="portfolio-item">
-                <div class="portfolio-image">
-                    <img src="Assest/Imagenes/Portafolio de Diseños.png" alt="Portafolio de Diseño">
-                </div>
-                <div class="portfolio-content">
-                    <h3>Portafolio de Diseño</h3>
-                    <p>Proyectos destacados de branding, identidad corporativa y experiencia de usuario para diversas marcas.</p>
-                    <a href="Portafolio_de_Diseño.html" class="btn btn-primary">Ver Portafolio</a>
-                </div>
-            </div>
-            
-            <div class="portfolio-item">
-                <div class="portfolio-image">
-                    <img src="Assest/Imagenes/Portafolio de Animacion.gif" alt="Portafolio de Animación">
-                </div>
-                <div class="portfolio-content">
-                    <h3>Portafolio de Animación</h3>
-                    <p>2D y 3D: Motion Graphics y VFX para publicidad, redes sociales y experiencias interactivas.</p>
-                    <a href="Portafolio_de_Animacion.html" class="btn btn-primary">Ver Portafolio</a>
+            <!-- 1. PROYECTOS DE DISEÑO GRÁFICO & BRANDING -->
+            <div class="portfolio-category" style="margin-top: 80px;">
+                <h3>Diseño Gráfico & Branding</h3>
+                <p class="category-desc">Proyectos destacados de identidad corporativa y estrategia de marca.</p>
+                
+                <div class="adobe-portfolio-grid">
+                    <!-- Proyecto 1 -->
+                    <a href="https://www.behance.net/gallery/proyecto-1" target="_blank" class="adobe-project-card">
+                        <div class="adobe-carousel">
+                            <img src="Assest/Imagenes/Portafolio de Diseños.png" class="carousel-img active" alt="Proyecto 1 - Vista 1">
+                            <img src="Assest/Imagenes/Imagen Informacion.png" class="carousel-img" alt="Proyecto 1 - Vista 2">
+                            <img src="Assest/Imagenes/Foto principal.jpeg" class="carousel-img" alt="Proyecto 1 - Vista 3">
+                        </div>
+                        <h4>Identidad Visual Zest & Aroma</h4>
+                    </a>
+
+                    <!-- Proyecto 2 -->
+                    <a href="https://www.behance.net/gallery/proyecto-2" target="_blank" class="adobe-project-card">
+                        <div class="adobe-carousel">
+                            <img src="Assest/Imagenes/Portafolio de Diseños.png" class="carousel-img active" alt="Proyecto 2 - Vista 1">
+                            <img src="Assest/Imagenes/Imagen Informacion.png" class="carousel-img" alt="Proyecto 2 - Vista 2">
+                            <img src="Assest/Imagenes/Foto principal.jpeg" class="carousel-img" alt="Proyecto 2 - Vista 3">
+                        </div>
+                        <h4>Branding TrashTalk Fashion</h4>
+                    </a>
+
+                    <!-- Proyecto 3 -->
+                    <a href="https://www.behance.net/gallery/proyecto-3" target="_blank" class="adobe-project-card">
+                        <div class="adobe-carousel">
+                            <img src="Assest/Imagenes/Portafolio de Diseños.png" class="carousel-img active" alt="Proyecto 3 - Vista 1">
+                            <img src="Assest/Imagenes/Imagen Informacion.png" class="carousel-img" alt="Proyecto 3 - Vista 2">
+                            <img src="Assest/Imagenes/Foto principal.jpeg" class="carousel-img" alt="Proyecto 3 - Vista 3">
+                        </div>
+                        <h4>Campaña Publicitaria Data Nest</h4>
+                    </a>
+
+                    <!-- Proyecto 4 -->
+                    <!-- <a href="https://www.behance.net/gallery/proyecto-4" target="_blank" class="adobe-project-card">
+                        <div class="adobe-carousel">
+                            <img src="Assest/Imagenes/Portafolio de Diseños.png" class="carousel-img active" alt="Proyecto 4 - Vista 1">
+                            <img src="Assest/Imagenes/Imagen Informacion.png" class="carousel-img" alt="Proyecto 4 - Vista 2">
+                            <img src="Assest/Imagenes/Foto principal.jpeg" class="carousel-img" alt="Proyecto 4 - Vista 3">
+                        </div>
+                        <h4>Campaña Publicitaria Data Nest</h4>
+                    </a> -->
+
+                    <!-- Proyecto 5 -->
+                    <!-- <a href="https://www.behance.net/gallery/proyecto-5" target="_blank" class="adobe-project-card">
+                        <div class="adobe-carousel">
+                            <img src="Assest/Imagenes/Portafolio de Diseños.png" class="carousel-img active" alt="Proyecto 5 - Vista 1">
+                            <img src="Assest/Imagenes/Imagen Informacion.png" class="carousel-img" alt="Proyecto 5 - Vista 2">
+                            <img src="Assest/Imagenes/Foto principal.jpeg" class="carousel-img" alt="Proyecto 5 - Vista 3">
+                        </div>
+                        <h4>Campaña Publicitaria Data Nest</h4>
+                    </a> -->
+
+                    <!-- Proyecto 6 -->
+                    <!-- <a href="https://www.behance.net/gallery/proyecto-6" target="_blank" class="adobe-project-card">
+                        <div class="adobe-carousel">
+                            <img src="Assest/Imagenes/Portafolio de Diseños.png" class="carousel-img active" alt="Proyecto 6 - Vista 1">
+                            <img src="Assest/Imagenes/Imagen Informacion.png" class="carousel-img" alt="Proyecto 6 - Vista 2">
+                            <img src="Assest/Imagenes/Foto principal.jpeg" class="carousel-img" alt="Proyecto 6 - Vista 3">
+                        </div>
+                        <h4>Campaña Publicitaria Data Nest</h4>
+                    </a> -->
                 </div>
             </div>
-            
-            <div class="portfolio-item">
-                <div class="portfolio-image">
-                    <img src="Assest/Imagenes/Portafolio Fotografico.png" alt="Portafolio Fotográfico">
-                </div>
-                <div class="portfolio-content">
-                    <h3>Portafolio Fotográfico</h3>
-                    <p>Publicidad, documental y fotografía editorial para marcas y medios profesionales.</p>
-                    <a href="#" class="btn btn-primary">Ver Portafolio</a>
+
+            <!-- 2. PORTAFOLIOS FOTOGRÁFICOS (Estilo Galería / Lightroom) -->
+            <div class="portfolio-category" style="margin-top: 80px;">
+                <h3>Fotografía Profesional</h3>
+                <p class="category-desc">Proyectos fotográficos de estudio y producto en alta resolución. Haz clic en cada álbum para explorar la colección completa.</p>
+                
+                <div class="photo-portfolio-grid">
+                    
+                    <!-- Álbum 1: Fotografía de Retrato -->
+                    <a href="https://adobe.ly/3UbWAPQ" target="_blank" class="photo-album-card">
+                        <div class="photo-card-media">
+                            <img src="Assest/Imagenes/Fotos de galerias/Retrato 1.jpg" alt="Fotografía de Retrato - Jullián Hoffman">
+                            <div class="photo-card-overlay">
+                                <i class='bx bx-camera photo-icon'></i>
+                                <span>Ver Álbum en Lightroom</span>
+                            </div>
+                        </div>
+                        <div class="photo-card-info">
+                            <h4>Fotografía de Retrato</h4>
+                            <p>Sesiones de estudio enfocadas en la expresión, iluminación en claroscuro y dirección de modelo.</p>
+                        </div>
+                    </a>
+
+                    <!-- Álbum 2: Fotografía de Producto -->
+                    <a href="https://adobe.ly/3Tbvjg6" target="_blank" class="photo-album-card">
+                        <div class="photo-card-media">
+                            <img src="Assest/Imagenes/Fotos de galerias/Producto 1.jpg" alt="Fotografía de Producto - Jullián Hoffman">
+                            <div class="photo-card-overlay">
+                                <i class='bx bx-package photo-icon'></i>
+                                <span>Ver Álbum en Lightroom</span>
+                            </div>
+                        </div>
+                        <div class="photo-card-info">
+                            <h4>Fotografía de Producto</h4>
+                            <p>Iluminación de alta precisión para realzar acabados, materiales y el valor comercial de los artículos.</p>
+                        </div>
+                    </a>
+
+                    <!-- Álbum 3: Fotografía de Eventos (Comentado para futura activación) -->
+                    <!--
+                    <a href="https://lightroom.adobe.com/shares/tu-link-de-eventos" target="_blank" class="photo-album-card">
+                        <div class="photo-card-media">
+                            <img src="Assest/Imagenes/Imagen Experiencia.png" alt="Fotografía de Eventos - Jullián Hoffman">
+                            <div class="photo-card-overlay">
+                                <i class='bx bx-calendar-event photo-icon'></i>
+                                <span>Ver Álbum en Lightroom</span>
+                            </div>
+                        </div>
+                        <div class="photo-card-info">
+                            <h4>Fotografía de Eventos</h4>
+                            <p>Cobertura documental de momentos clave en entornos corporativos, culturales y sociales.</p>
+                        </div>
+                    </a>
+                    -->
+
                 </div>
             </div>
-        </div> -->
+
+            <!-- 3. PROYECTOS EN PRODUCCIÓN AUDIOVISUAL -->
+            <div class="portfolio-category" style="margin-top: 80px;">
+                <h3>Producción Audiovisual</h3>
+                <p class="category-desc">Dirección de fotografía, rodaje, montaje cinematográfico y contenidos publicitarios.</p>
+                
+                <div class="adobe-portfolio-grid">
+                    
+                    <!-- Video 1: Cortometraje Zárate -->
+                    <div class="adobe-project-card">
+                        <div class="adobe-carousel" style="aspect-ratio: 16/9; background: var(--negro);">
+                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/u8D0fSDtfnU?si=FXPGR3pBuH2kMV_m" title="Cortometraje Zárate" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius: 8px;"></iframe>
+                        </div>
+                        <h4>Cortometraje Zárate</h4>
+                        <p style="font-family: 'Rubik-Regular', sans-serif; font-size: 13px; color: #c5c5c5; margin-top: 5px;">Dirección de fotografía y montaje en baja clave.</p>
+                    </div>
+
+                    <!-- Video 2: Entre Nubes -->
+                    <div class="adobe-project-card">
+                        <div class="adobe-carousel" style="aspect-ratio: 16/9; background: var(--negro);">
+                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/FmPq3pZcNI4?si=Dz7uUhPXla4aE5Pn" title="Entre Nubes" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius: 8px;"></iframe>
+                        </div>
+                        <h4>Entre Nubes</h4>
+                        <p style="font-family: 'Rubik-Regular', sans-serif; font-size: 13px; color: #c5c5c5; margin-top: 5px;">Producción técnica en exteriores y entornos naturales.</p>
+                    </div>
+
+                    <!-- Video 3: Talento U Latina -->
+                    <div class="adobe-project-card">
+                        <div class="adobe-carousel" style="aspect-ratio: 16/9; background: var(--negro);">
+                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/xnNxnS0exJE?si=dR6aYlg_bHaMkh98" title="Talento U Latina" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius: 8px;"></iframe>
+                        </div>
+                        <h4>Talento U Latina</h4>
+                        <p style="font-family: 'Rubik-Regular', sans-serif; font-size: 13px; color: #c5c5c5; margin-top: 5px;">Dirección técnica en vivo y efectos visuales (VFX).</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- 4. PROYECTOS COMPLETOS PARA STREAMING -->
+            <div class="portfolio-category" style="margin-top: 80px;">
+                <h3>Proyectos para Streaming & Creadores</h3>
+                <p class="category-desc">Entornos visuales interactivos, overlays animados y modelos 3D optimizados para creadores de contenido. Haz clic para ver el proyecto completo en Behance.</p>
+                
+                <div class="adobe-portfolio-grid">
+                    
+                    <!-- Proyecto Streaming 1: Overlays y Alertas -->
+                    <a href="https://www.behance.net/jullinhoffman2" target="_blank" class="adobe-project-card">
+                        <div class="adobe-carousel" style="aspect-ratio: 16/9;">
+                            <img src="Assest/Imagenes/Portafolio de Diseños.png" class="carousel-img active" alt="Overlays para Streaming">
+                        </div>
+                        <h4>Overlays & Alertas Animadas</h4>
+                        <p style="font-family: 'Rubik-Regular', sans-serif; font-size: 13px; color: #c5c5c5; margin-top: 5px;">Interfaces dinámicas y alertas para OBS Studio.</p>
+                    </a>
+
+                    <!-- Proyecto Streaming 2: Modelado 3D / VTuber -->
+                    <a href="https://www.behance.net/jullinhoffman2" target="_blank" class="adobe-project-card">
+                        <div class="adobe-carousel" style="aspect-ratio: 16/9;">
+                            <img src="Assest/Imagenes/Imagen Informacion.png" class="carousel-img active" alt="Rigging y Modelado VTuber 3D">
+                        </div>
+                        <h4>Rigging & Modelado VTuber 3D</h4>
+                        <p style="font-family: 'Rubik-Regular', sans-serif; font-size: 13px; color: #c5c5c5; margin-top: 5px;">Avatares 3D estructurados y texturizados en Blender.</p>
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
     </section>
 
-    <!-- Sección Contacto -->
-    <section id="contacto" class="contacto">
-        <h2>Contacto</h2>
-        
-        <div class="contact-options">
-            <a href="https://wa.me/50493887101" class="contact-option" target="_blank">
-                <i class='bx bxl-whatsapp'></i>
-                <span>Contacto directo por WhatsApp</span>
-            </a>
+    <!-- Vista 4: Sección Contacto -->
+    <section id="contacto" class="page-section">
+        <div class="contacto-container">
+            <h2>Contacto</h2>
             
-            <a href="mailto:julli_hoffman@hotmail.com" class="contact-option" target="_blank">
-                <i class='bx bx-mail-send'></i>
-                <span>Contacto directo por Correo</span>
-            </a>
-        </div>
-        
-        <div class="contact-form">
-            <form action="https://api.web3forms.com/submit" method="POST" id="contactForm">
-                <!-- IMPORTANTE: Para activar este formulario, debes: 
-                     1. Visitar https://web3forms.com/
-                     2. Crear una clave de acceso con tu correo electrónico
-                     3. Reemplazar el valor a continuación con tu clave recibida por correo -->
-                <input type="hidden" name="access_key" value="a8e628f1-c490-467f-bc0a-2d3e4a426a09">
+            <div class="contact-options">
+                <a href="https://wa.me/50493887101" class="contact-option" target="_blank">
+                    <i class='bx bxl-whatsapp'></i>
+                    <span>Contacto directo por WhatsApp</span>
+                </a>
                 
-                <div class="form-row">
-                    <div class="form-group">
-                        <input type="text" name="name" id="Nombre" placeholder="Nombre Completo" required>
+                <a href="mailto:julli_hoffman@hotmail.com" class="contact-option" target="_blank">
+                    <i class='bx bx-mail-send'></i>
+                    <span>Contacto directo por Correo</span>
+                </a>
+            </div>
+            
+            <div class="contact-form">
+                <form action="https://api.web3forms.com/submit" method="POST" id="contactForm">
+                    <!-- Clave de acceso configurada para Web3Forms[cite: 26] -->
+                    <input type="hidden" name="access_key" value="a8e628f1-c490-467f-bc0a-2d3e4a426a09">
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" name="name" id="Nombre" placeholder="Nombre Completo" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" id="Correo" placeholder="Correo Electrónico" required>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <input type="email" name="email" id="Correo" placeholder="Correo Electrónico" required>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="tel" name="phone" id="Telefono" placeholder="Número Telefónico">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="subject" id="Asunto" placeholder="Asunto del Correo">
+                        </div>
                     </div>
-                </div>
-                
-                <div class="form-row">
+                    
                     <div class="form-group">
-                        <input type="tel" name="phone" id="Telefono" placeholder="Número Telefónico">
+                        <textarea name="message" id="Descripcion" cols="30" rows="10" placeholder="Tu mensaje" required></textarea>
                     </div>
-                    <div class="form-group">
-                        <input type="text" name="subject" id="Asunto" placeholder="Asunto del Correo">
+                    
+                    <div class="form-submit">
+                        <input type="submit" value="Enviar Mensaje" class="btn btn-primary">
                     </div>
-                </div>
-                
-                <div class="form-group">
-                    <textarea name="message" id="Descripcion" cols="30" rows="10" placeholder="Tu mensaje" required></textarea>
-                </div>
-                
-                <div class="form-submit">
-                    <input type="submit" value="Enviar Mensaje" class="btn btn-primary">
-                </div>
-                
-                <!-- Protección contra spam -->
-                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-                
-                <!-- Campos opcionales para Web3Forms -->
-                <input type="hidden" name="redirect" value="https://jullianhoffman.github.io/?#contacto">
-                <input type="hidden" name="from_name" value="Sitio Web de Jullián Hoffman">
-                <input type="hidden" name="replyto" value="julli_hoffman@hotmail.com">
-            </form>
+                    
+                    <!-- Protección contra spam -->
+                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                    
+                    <!-- Campos opcionales para Web3Forms -->
+                    <input type="hidden" name="redirect" value="https://jullianhoffman.github.io/?#contacto">
+                    <input type="hidden" name="from_name" value="Sitio Web de Jullián Hoffman">
+                    <input type="hidden" name="replyto" value="julli_hoffman@hotmail.com">
+                </form>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>Copyright © 2026 by Jullián Hoffman | All Rights Reserved | Designed and programmed by Jullián Hoffman</p>
+        <p>Copyright © 2027 by Jullián Hoffman | All Rights Reserved</p>
     </footer>
 
-    <!-- JavaScript -->
     <script src="JS/script.js"></script>
 </body>
 </html>
